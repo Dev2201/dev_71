@@ -1,0 +1,3 @@
+{"students": [ { name: 'A', id: 'aaa', dob: '05-02-92', phnum: '8884432387', cgpa: '2.43' },
+  { name: 'B', id: 'bbb', dob: '02-07-96', phnum: '8682232385', cgpa: '2.76' },
+]}

@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type='text/javascript'>
+$(function(){
+var a = ['C:\Users\mpstme.student\Desktop\WP_A3_071/data.json'];
+
+jQuery('#search-json-submit').click(function() {
+    jQuery('#search-output').html('');
+    var search_query = jQuery('#search-json-input').val();
+    var search_query_regex = new RegExp(".*"+search_query+".*", "g");
+    jQuery.each(a, function(k, v) {
+        if(v['email'].match(search_query_regex) ||
+           v['id'].match(search_query_regex) ||
+           v['dob'].match(search_query_regex) ||
+           v['cgpa'].match(search_query_regex) ||
+           v['phnum'].match(search_query_regex)) {
+               jQuery('#search-output').append('<li>Search results found in: '+'{ name: "'+v['name']+'", id: "'+v['id']+'",dob : "'+v['dob']+'" , phnmu: "'+v['phnum']+'", cgpa: "'+v['cgpa']+'"} </li>');
+        }
+    });
+});
+
+});//]]> 
+
+</script>
+
+</head>
+<body>
+  <input type="text" id="search-json-input" />
+<input type="button" id="search-json-submit" value="Smart search" />
+<h4>Search Results</h4>
+<ol id="search-output">
+
+</ol>
+
+</body>
+</html>
